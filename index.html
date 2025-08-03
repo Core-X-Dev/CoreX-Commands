@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreX Commands - FiveM Framework Commands</title>
+    <meta name="theme-color" content="#111827">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- SEO and Social Meta Tags -->
+    <meta name="description" content="CoreX Commands - Complete reference for all CoreX Framework commands and module commands. Find the right command for your FiveM server.">
+    <meta name="keywords" content="FiveM, CoreX, Commands, Framework, Lua, Gaming, Server, Development, Console Commands">
+    <meta name="author" content="CoreX">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="CoreX Commands - FiveM Framework Commands">
+    <meta property="og:description" content="Complete reference for all CoreX Framework commands and module commands.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://commands.core-x.dev/">
+    <meta property="og:image" content="https://commands.core-x.dev/assets/corex-logo.png">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CoreX Commands - FiveM Framework Commands">
+    <meta name="twitter:description" content="Complete reference for all CoreX Framework commands and module commands.">
+    <meta name="twitter:image" content="https://commands.core-x.dev/assets/corex-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://commands.core-x.dev/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/corex-icon.png">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/corex-logo.png" alt="CoreX Framework Logo" class="corex-logo" />
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <ul class="nav-menu">
+                    <li><a href="#overview" class="nav-link active"><i class="fas fa-home"></i> Overview</a></li>
+                    <li><a href="#core-commands" class="nav-link"><i class="fas fa-terminal"></i> Core Commands</a></li>
+                    <li><a href="#module-commands" class="nav-link"><i class="fas fa-puzzle-piece"></i> Module Commands</a></li>
+                    <li><a href="#admin-commands" class="nav-link"><i class="fas fa-shield-alt"></i> Admin Commands</a></li>
+                    <li><a href="#player-commands" class="nav-link"><i class="fas fa-user"></i> Player Commands</a></li>
+                    <li><a href="#usage" class="nav-link"><i class="fas fa-book"></i> Usage Guide</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Overview Section -->
+                <section id="overview" class="section">
+                    <center><img src="assets/corex-logo.png" alt="CoreX Framework Logo" class="corex-logo" style="width: 700px"/></center>
+                    <h1>CoreX Commands</h1>
+                    <p class="lead">Complete reference for all CoreX Framework commands and module commands.</p>
+                    
+                    <div class="version-badge">
+                        <span class="version-number">v1.0.2.0</span>
+                        <span class="version-status">Active Development</span>
+                    </div>
+
+                    <p>CoreX Commands provides a comprehensive reference for all available commands in the CoreX Framework and its modules. From core functionality to module-specific commands, find everything you need to manage your FiveM server effectively.</p>
+                </section>
+
+                <!-- Core Commands Section -->
+                <section id="core-commands" class="section">
+                    <h2>🔧 Core Commands</h2>
+                    <p>Essential commands for managing the CoreX Framework and basic server operations.</p>
+                    
+                    <div class="commands-grid">
+                        <div class="command-card">
+                            <h4>/corex</h4>
+                            <p>Main CoreX command for framework management and information.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/corex [subcommand]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/corex version</code> - Show framework version<br>
+                                <code>/corex status</code> - Show server status<br>
+                                <code>/corex modules</code> - List loaded modules
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/reload</h4>
+                            <p>Reload CoreX Framework or specific modules without server restart.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/reload [module]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/reload</code> - Reload entire framework<br>
+                                <code>/reload CoreX-Characters</code> - Reload specific module
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/config</h4>
+                            <p>Manage CoreX Framework configuration settings.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/config [action] [key] [value]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/config get mysql_connection</code> - Get config value<br>
+                                <code>/config set debug_mode true</code> - Set config value
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/module</h4>
+                            <p>Manage CoreX modules - load, unload, enable, disable.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/module [action] [module_name]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/module load CoreX-Vehicles</code> - Load module<br>
+                                <code>/module disable CoreX-Jobs</code> - Disable module
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/permission</h4>
+                            <p>Manage user permissions and role-based access control.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/permission [action] [user] [permission]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/permission add player123 admin</code> - Add permission<br>
+                                <code>/permission list player123</code> - List user permissions
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/audit</h4>
+                            <p>View audit logs and security events for the server.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/audit [filter] [limit]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/audit login 50</code> - Show last 50 login events<br>
+                                <code>/audit admin</code> - Show admin actions
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Module Commands Section -->
+                <section id="module-commands" class="section">
+                    <h2>🧩 Module Commands</h2>
+                    <p>Commands specific to CoreX modules and their functionality.</p>
+                    
+                    <div class="commands-grid">
+                        <div class="command-card">
+                            <h4>/character</h4>
+                            <p>Manage player characters and character-related operations.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/character [action] [player] [options]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/character create player123</code> - Create new character<br>
+                                <code>/character list player123</code> - List player characters<br>
+                                <code>/character switch player123 2</code> - Switch to character 2
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/vehicle</h4>
+                            <p>Manage vehicles, spawning, and vehicle-related operations.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/vehicle [action] [options]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/vehicle spawn adder</code> - Spawn vehicle<br>
+                                <code>/vehicle give player123 adder</code> - Give vehicle to player<br>
+                                <code>/vehicle delete</code> - Delete current vehicle
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/house</h4>
+                            <p>Manage housing system, properties, and housing operations.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/house [action] [player] [options]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/house buy player123 100000</code> - Buy house<br>
+                                <code>/house list player123</code> - List player houses<br>
+                                <code>/house sell player123 1</code> - Sell house
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/job</h4>
+                            <p>Manage jobs, employment, and job-related operations.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/job [action] [player] [job_name]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/job assign player123 police</code> - Assign job<br>
+                                <code>/job fire player123</code> - Fire from job<br>
+                                <code>/job list</code> - List available jobs
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/inventory</h4>
+                            <p>Manage player inventories and item operations.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/inventory [action] [player] [item] [amount]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/inventory give player123 money 5000</code> - Give money<br>
+                                <code>/inventory remove player123 weapon_pistol</code> - Remove item<br>
+                                <code>/inventory show player123</code> - Show inventory
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/economy</h4>
+                            <p>Manage server economy, money, and financial operations.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/economy [action] [player] [amount]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/economy add player123 10000</code> - Add money<br>
+                                <code>/economy set player123 50000</code> - Set money<br>
+                                <code>/economy tax 5</code> - Set tax rate
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Admin Commands Section -->
+                <section id="admin-commands" class="section">
+                    <h2>🛡️ Admin Commands</h2>
+                    <p>Administrative commands for server management and moderation.</p>
+                    
+                    <div class="commands-grid">
+                        <div class="command-card">
+                            <h4>/kick</h4>
+                            <p>Kick a player from the server with optional reason.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/kick [player] [reason]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/kick player123</code> - Kick player<br>
+                                <code>/kick player123 "Breaking rules"</code> - Kick with reason
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/ban</h4>
+                            <p>Ban a player from the server temporarily or permanently.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/ban [player] [duration] [reason]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/ban player123 24h</code> - Ban for 24 hours<br>
+                                <code>/ban player123 permanent "Cheating"</code> - Permanent ban
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/warn</h4>
+                            <p>Warn a player for rule violations or inappropriate behavior.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/warn [player] [reason]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/warn player123 "Inappropriate language"</code> - Warn player
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/teleport</h4>
+                            <p>Teleport players to specific locations or other players.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/teleport [player] [target]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/teleport player123 admin123</code> - Teleport to admin<br>
+                                <code>/teleport player123 100,200,30</code> - Teleport to coordinates
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/noclip</h4>
+                            <p>Enable or disable noclip mode for players.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/noclip [player] [on/off]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/noclip player123 on</code> - Enable noclip<br>
+                                <code>/noclip player123 off</code> - Disable noclip
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/godmode</h4>
+                            <p>Enable or disable god mode for players.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/godmode [player] [on/off]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/godmode player123 on</code> - Enable god mode<br>
+                                <code>/godmode player123 off</code> - Disable god mode
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Player Commands Section -->
+                <section id="player-commands" class="section">
+                    <h2>👤 Player Commands</h2>
+                    <p>Commands available to all players for basic interactions and information.</p>
+                    
+                    <div class="commands-grid">
+                        <div class="command-card">
+                            <h4>/help</h4>
+                            <p>Show available commands and basic help information.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/help [category]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/help</code> - Show all commands<br>
+                                <code>/help admin</code> - Show admin commands
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/me</h4>
+                            <p>Perform roleplay actions and describe your character's actions.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/me [action]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/me sits down at the table</code> - Describe action
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/do</h4>
+                            <p>Describe environmental actions or situations.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/do [description]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/do The door is locked</code> - Describe situation
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/ooc</h4>
+                            <p>Send out-of-character messages to other players.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/ooc [message]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/ooc Does anyone know how to fix this?</code> - OOC message
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/report</h4>
+                            <p>Report issues, bugs, or player violations to administrators.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/report [message]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/report Player123 is cheating</code> - Report player
+                            </div>
+                        </div>
+                        
+                        <div class="command-card">
+                            <h4>/stats</h4>
+                            <p>View your character statistics and progression information.</p>
+                            <div class="command-example">
+                                <strong>Usage:</strong> <code>/stats [category]</code><br>
+                                <strong>Examples:</strong><br>
+                                <code>/stats</code> - Show all stats<br>
+                                <code>/stats money</code> - Show money stats
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Usage Guide Section -->
+                <section id="usage" class="section">
+                    <h2>📖 Usage Guide</h2>
+                    <p>Learn how to use CoreX commands effectively and understand command syntax.</p>
+                    
+                    <div class="quick-start-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h3>Command Structure</h3>
+                            <p>All CoreX commands follow a consistent structure for easy learning.</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Syntax</span>
+                                    <button class="copy-btn" onclick="copyCode('command-syntax')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre id="command-syntax"><code>/command [action] [target] [options]</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h3>Permissions</h3>
+                            <p>Commands require appropriate permissions based on your role and access level.</p>
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i>
+                                <strong>Tip:</strong> Use /help to see commands available to you
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h3>Command Categories</h3>
+                            <p>Commands are organized by functionality for easy navigation and reference.</p>
+                            <ul>
+                                <li><strong>Core Commands:</strong> Framework management</li>
+                                <li><strong>Module Commands:</strong> Module-specific functionality</li>
+                                <li><strong>Admin Commands:</strong> Server administration</li>
+                                <li><strong>Player Commands:</strong> Basic player interactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
